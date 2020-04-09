@@ -2,14 +2,21 @@ import XCTest
 @testable import ShamirKit
 
 final class ShamirKitTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(ShamirKit().text, "Hello, World!")
+  func testShamir() {
+    var rng = LCRNG(seed: 6)
+    let shares = shamirWithNumbers(500, using: &rng)
+    
+    func secretFromShamirShares(shares: [UInt64]) -> UInt64 {
+      print(shares[0])
+      print(shares[1])
+      return UInt64(-(Int(shares[1]) - (2 * Int(shares[0]))))
     }
-
-    static var allTests = [
-        ("testExample", testExample),
-    ]
+    
+    XCTAssertEqual(500, secretFromShamirShares(shares: shares))
+  }
+  
+  //afaik this is just for linux, we can reenable it if need be
+  //  static var allTests = [
+  //    ("testShamir", testShamir),
+  //  ]
 }
