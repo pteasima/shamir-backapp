@@ -3,9 +3,9 @@ import XCTest
 
 final class ShamirKitTests: XCTestCase {
   func testShamir() {
-    var rng = LCRNG(seed: 1)
+    var rng = LCRNG(seed: 2)
     
-    let (secret,points) = generateShares(threshold: 5, using: &rng)
+    let (secret,points) = generateShares(threshold: 100, using: &rng)
     print(secret)
     print(points)
     let recoveredSecret = recoverSecret(shares: points)
