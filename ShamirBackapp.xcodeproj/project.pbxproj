@@ -38,6 +38,7 @@
 		7987D7E1243DE20100598DD4 /* ShamirBackappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShamirBackappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7987D7E5243DE20100598DD4 /* ShamirBackappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShamirBackappTests.swift; sourceTree = "<group>"; };
 		7987D7E7243DE20100598DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7987D7F1243F5CCD00598DD4 /* ShamirKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ShamirKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +62,7 @@
 		7987D7C2243DE1FB00598DD4 = {
 			isa = PBXGroup;
 			children = (
+				7987D7F1243F5CCD00598DD4 /* ShamirKit */,
 				7987D7CD243DE1FB00598DD4 /* ShamirBackapp */,
 				7987D7E4243DE20100598DD4 /* ShamirBackappTests */,
 				7987D7CC243DE1FB00598DD4 /* Products */,
