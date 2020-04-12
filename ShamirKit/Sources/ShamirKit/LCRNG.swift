@@ -1,7 +1,7 @@
 import Foundation
 
 // a RandomNumberGenerator that can be seeded
-// taken from https://github.com/pointfreeco/episode-code-samples/blob/0506da94f9db74ce19fa965f44e57258a2aa3c1c/0048-predictable-randomness-pt2/PredictableRandomness.playground/Contents.swift#L107
+// pasted from https://github.com/pointfreeco/episode-code-samples/blob/0506da94f9db74ce19fa965f44e57258a2aa3c1c/0048-predictable-randomness-pt2/PredictableRandomness.playground/Contents.swift#L107
 struct LCRNG: RandomNumberGenerator {
   var seed: UInt64
 

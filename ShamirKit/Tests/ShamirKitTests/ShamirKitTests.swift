@@ -3,11 +3,16 @@ import XCTest
 
 final class ShamirKitTests: XCTestCase {
   func testShamir() {
-    var rng = LCRNG(seed: 6)
-    let shares = shamir(secret: 500, using: &rng)
+    var rng = LCRNG(seed: 1)
     
+    let (secret,points) = generateShares(threshold: 5, using: &rng)
+    print(secret)
+    print(points)
+    let recoveredSecret = recoverSecret(shares: points)
+    print(recoveredSecret)
     
-    XCTAssertEqual(500, unshamir(shares: shares))
+//    let shares = shamir(secret: 500, using: &rng)
+    XCTAssertEqual(secret, recoveredSecret)
   }
   
   //afaik this is just for linux, we can reenable it if need be
