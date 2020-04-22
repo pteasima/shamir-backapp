@@ -1,21 +1,24 @@
 import Foundation
 import Combine
 import UIKit
+import ShamirKit
+import SwiftUI
 
 // I eventually want to move this to pointfreeco's ComposableArchitecture when its released
 // I have some prototypes of the same architecture but no point investing into that now
 // So Im going for a simple redux that can be easily refactored later
 final class Store: ObservableObject {
   @Published var isMaskEnabled: Bool = false
-  @Published var text: String = ""
+  @Published var secretText: String = ""
   @Published var pasteboardString: String?
   @Published var threshold: Int = 2
+  @Published var generatedShares: Shares? = (shares: [Share(x: 1, y: 421337341289)], mersennePrimePower: 127)
   
-  var displayedText: String {
+  var displayedSecretText: String {
     get {
-      isMaskEnabled ? String(repeating: "*", count: text.count) : text
+      isMaskEnabled ? String(repeating: "*", count: secretText.count) : secretText
     } set {
-      text = newValue
+      secretText = newValue
     }
   }
   var isPasteDisabled: Bool {
@@ -25,8 +28,39 @@ final class Store: ObservableObject {
     get { Double(threshold) }
     set { threshold = max(2, Int(round(newValue))) }
   }
-  var isGenerateSharesDisabled: Bool {
-    text.isEmpty
+  
+  enum State {
+    case generating
+    case generated
+  }
+  var state: State {
+    generatedShares == nil ? .generating : .generated
+  }
+  var isInputSectionDisabled: Bool {
+    generatedShares != nil
+  }
+  var isGenerateDisabled: Bool {
+    state == .generating && secretText.isEmpty
+  }
+  var generateButtonText: String {
+    switch state {
+    case .generating:
+      return "Generate Shares"
+    case .generated:
+      return "Modify Input"
+    }
+  }
+  // Color is a View, does using it here break any best practices?
+  // Arguably these computed properties are just UI helpers anyway.
+  // I try to practice https://twitter.com/rtfeldman/status/1025454724206743553?s=20
+  var generateButtonColor: Color {
+    guard !isGenerateDisabled else { return .gray }
+    switch state {
+    case .generating:
+      return .green
+    case .generated:
+      return .red
+    }
   }
   
   private var cancellables: [AnyCancellable] = []
@@ -42,10 +76,18 @@ final class Store: ObservableObject {
   
   func pasteFromClipboard() {
     guard let string = UIPasteboard.general.string else { return }
-    text = string
+    secretText = string
   }
   
-  func generateShares() {
+  func generateButtonTapped() {
+    switch state {
+    case .generating:
+        let secretInt = secretText.utf8BigUIntRepresentation
+        var gen = SystemRandomNumberGenerator()
+        generatedShares = try! ShamirKit.generateShares(secret: secretInt, threshold: threshold, using: &gen)
+    case .generated:
+      generatedShares = nil
+    }
     
   }
 }

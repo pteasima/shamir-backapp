@@ -21,7 +21,7 @@ extension BigUInt {
   }
 }
 
-extension String {
+public extension String {
   var utf8BigUIntRepresentation: BigUInt {
     var mutableSelf = self //we dont actually mutate it so there shouldnt be a performance impact
     return mutableSelf.withUTF8 { bytes in
