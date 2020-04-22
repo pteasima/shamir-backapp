@@ -3,17 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7942744924508D63002BEE35 /* ShamirKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7942744824508D63002BEE35 /* ShamirKit */; };
+		7942744C24509ADD002BEE35 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7942744B24509ADD002BEE35 /* StyleGuide.swift */; };
 		7987D7CF243DE1FB00598DD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7CE243DE1FB00598DD4 /* AppDelegate.swift */; };
 		7987D7D1243DE1FB00598DD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7D0243DE1FB00598DD4 /* SceneDelegate.swift */; };
-		7987D7D3243DE1FB00598DD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7D2243DE1FB00598DD4 /* ContentView.swift */; };
+		7987D7D3243DE1FB00598DD4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7D2243DE1FB00598DD4 /* RootView.swift */; };
 		7987D7D5243DE20000598DD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7987D7D4243DE20000598DD4 /* Assets.xcassets */; };
 		7987D7D8243DE20000598DD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7987D7D7243DE20000598DD4 /* Preview Assets.xcassets */; };
 		7987D7DB243DE20000598DD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7987D7D9243DE20000598DD4 /* LaunchScreen.storyboard */; };
 		7987D7E6243DE20100598DD4 /* ShamirBackappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7E5243DE20100598DD4 /* ShamirBackappTests.swift */; };
+		79C9A502245053A000B14FDC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C9A501245053A000B14FDC /* Store.swift */; };
+		79C9A5062450550700B14FDC /* EncodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C9A5052450550700B14FDC /* EncodeView.swift */; };
+		79C9A509245064FE00B14FDC /* Pasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C9A508245064FE00B14FDC /* Pasteboard.swift */; };
+		79C9A50B2450654400B14FDC /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C9A50A2450654400B14FDC /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,10 +33,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7942744424508CE1002BEE35 /* ShamirKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ShamirKit; sourceTree = "<group>"; };
+		7942744B24509ADD002BEE35 /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		7987D7CB243DE1FB00598DD4 /* ShamirBackapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShamirBackapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7987D7CE243DE1FB00598DD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7987D7D0243DE1FB00598DD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7987D7D2243DE1FB00598DD4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7987D7D2243DE1FB00598DD4 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7987D7D4243DE20000598DD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7987D7D7243DE20000598DD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7987D7DA243DE20000598DD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,7 +46,10 @@
 		7987D7E1243DE20100598DD4 /* ShamirBackappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShamirBackappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7987D7E5243DE20100598DD4 /* ShamirBackappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShamirBackappTests.swift; sourceTree = "<group>"; };
 		7987D7E7243DE20100598DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7987D7F1243F5CCD00598DD4 /* ShamirKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ShamirKit; sourceTree = "<group>"; };
+		79C9A501245053A000B14FDC /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		79C9A5052450550700B14FDC /* EncodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodeView.swift; sourceTree = "<group>"; };
+		79C9A508245064FE00B14FDC /* Pasteboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pasteboard.swift; sourceTree = "<group>"; };
+		79C9A50A2450654400B14FDC /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7942744924508D63002BEE35 /* ShamirKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,13 +71,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7942744724508D63002BEE35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7942744A24509ACD002BEE35 /* StyleGuide */ = {
+			isa = PBXGroup;
+			children = (
+				7942744B24509ADD002BEE35 /* StyleGuide.swift */,
+			);
+			path = StyleGuide;
+			sourceTree = "<group>";
+		};
 		7987D7C2243DE1FB00598DD4 = {
 			isa = PBXGroup;
 			children = (
-				7987D7F1243F5CCD00598DD4 /* ShamirKit */,
+				7942744424508CE1002BEE35 /* ShamirKit */,
 				7987D7CD243DE1FB00598DD4 /* ShamirBackapp */,
 				7987D7E4243DE20100598DD4 /* ShamirBackappTests */,
 				7987D7CC243DE1FB00598DD4 /* Products */,
+				7942744724508D63002BEE35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,9 +109,12 @@
 		7987D7CD243DE1FB00598DD4 /* ShamirBackapp */ = {
 			isa = PBXGroup;
 			children = (
+				7942744A24509ACD002BEE35 /* StyleGuide */,
+				79C9A507245064E300B14FDC /* Environment */,
+				79C9A501245053A000B14FDC /* Store.swift */,
+				79C9A503245054F600B14FDC /* Scenes */,
 				7987D7CE243DE1FB00598DD4 /* AppDelegate.swift */,
 				7987D7D0243DE1FB00598DD4 /* SceneDelegate.swift */,
-				7987D7D2243DE1FB00598DD4 /* ContentView.swift */,
 				7987D7D4243DE20000598DD4 /* Assets.xcassets */,
 				7987D7D9243DE20000598DD4 /* LaunchScreen.storyboard */,
 				7987D7DC243DE20000598DD4 /* Info.plist */,
@@ -109,6 +140,32 @@
 			path = ShamirBackappTests;
 			sourceTree = "<group>";
 		};
+		79C9A503245054F600B14FDC /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				79C9A504245054FB00B14FDC /* Encode */,
+				7987D7D2243DE1FB00598DD4 /* RootView.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		79C9A504245054FB00B14FDC /* Encode */ = {
+			isa = PBXGroup;
+			children = (
+				79C9A5052450550700B14FDC /* EncodeView.swift */,
+			);
+			path = Encode;
+			sourceTree = "<group>";
+		};
+		79C9A507245064E300B14FDC /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				79C9A508245064FE00B14FDC /* Pasteboard.swift */,
+				79C9A50A2450654400B14FDC /* Environment.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,8 +180,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				7942744624508D3F002BEE35 /* PBXTargetDependency */,
 			);
 			name = ShamirBackapp;
+			packageProductDependencies = (
+				7942744824508D63002BEE35 /* ShamirKit */,
+			);
 			productName = ShamirBackapp;
 			productReference = 7987D7CB243DE1FB00598DD4 /* ShamirBackapp.app */;
 			productType = "com.apple.product-type.application";
@@ -211,8 +272,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7987D7CF243DE1FB00598DD4 /* AppDelegate.swift in Sources */,
+				79C9A509245064FE00B14FDC /* Pasteboard.swift in Sources */,
+				7942744C24509ADD002BEE35 /* StyleGuide.swift in Sources */,
 				7987D7D1243DE1FB00598DD4 /* SceneDelegate.swift in Sources */,
-				7987D7D3243DE1FB00598DD4 /* ContentView.swift in Sources */,
+				79C9A50B2450654400B14FDC /* Environment.swift in Sources */,
+				79C9A5062450550700B14FDC /* EncodeView.swift in Sources */,
+				7987D7D3243DE1FB00598DD4 /* RootView.swift in Sources */,
+				79C9A502245053A000B14FDC /* Store.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +293,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7942744624508D3F002BEE35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 7942744524508D3F002BEE35 /* ShamirKit */;
+		};
 		7987D7E3243DE20100598DD4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7987D7CA243DE1FB00598DD4 /* ShamirBackapp */;
@@ -475,6 +545,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7942744524508D3F002BEE35 /* ShamirKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ShamirKit;
+		};
+		7942744824508D63002BEE35 /* ShamirKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ShamirKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7987D7C3243DE1FB00598DD4 /* Project object */;
 }
