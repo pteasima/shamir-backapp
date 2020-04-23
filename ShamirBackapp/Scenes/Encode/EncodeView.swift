@@ -7,16 +7,14 @@ struct EncodeView: View {
   
   var body: some View {
     NavigationView {
-      List {
+      Form {
         inputSection()
         store.generatedShares.map(generatedSharesSection)
       }
-      .listStyle(GroupedListStyle())
-        .buttonStyle(BorderlessButtonStyle())//override the List-style for all subviews
-        .tabItem {
-          Text("Encode")
-      }
       .navigationBarTitle("Encode")
+    }
+    .tabItem {
+        Text("Encode")
     }
   }
   
