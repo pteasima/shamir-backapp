@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		7942744924508D63002BEE35 /* ShamirKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7942744824508D63002BEE35 /* ShamirKit */; };
 		7942744C24509ADD002BEE35 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7942744B24509ADD002BEE35 /* StyleGuide.swift */; };
+		794274512453046F002BEE35 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 794274502453046F002BEE35 /* ComposableArchitecture */; };
+		794274532453046F002BEE35 /* ComposableArchitecture in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 794274502453046F002BEE35 /* ComposableArchitecture */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		794274552453046F002BEE35 /* ComposableArchitectureTestSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 794274542453046F002BEE35 /* ComposableArchitectureTestSupport */; };
+		794274562453046F002BEE35 /* ComposableArchitectureTestSupport in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 794274542453046F002BEE35 /* ComposableArchitectureTestSupport */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7987D7CF243DE1FB00598DD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7CE243DE1FB00598DD4 /* AppDelegate.swift */; };
 		7987D7D1243DE1FB00598DD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7D0243DE1FB00598DD4 /* SceneDelegate.swift */; };
 		7987D7D3243DE1FB00598DD4 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7D2243DE1FB00598DD4 /* RootView.swift */; };
@@ -31,6 +35,31 @@
 			remoteInfo = ShamirBackapp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		794274522453046F002BEE35 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				794274532453046F002BEE35 /* ComposableArchitecture in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		794274572453046F002BEE35 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				794274562453046F002BEE35 /* ComposableArchitectureTestSupport in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7942744424508CE1002BEE35 /* ShamirKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ShamirKit; sourceTree = "<group>"; };
@@ -57,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				794274512453046F002BEE35 /* ComposableArchitecture in Frameworks */,
 				7942744924508D63002BEE35 /* ShamirKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				794274552453046F002BEE35 /* ComposableArchitectureTestSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +207,7 @@
 				7987D7C7243DE1FB00598DD4 /* Sources */,
 				7987D7C8243DE1FB00598DD4 /* Frameworks */,
 				7987D7C9243DE1FB00598DD4 /* Resources */,
+				794274522453046F002BEE35 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +217,7 @@
 			name = ShamirBackapp;
 			packageProductDependencies = (
 				7942744824508D63002BEE35 /* ShamirKit */,
+				794274502453046F002BEE35 /* ComposableArchitecture */,
 			);
 			productName = ShamirBackapp;
 			productReference = 7987D7CB243DE1FB00598DD4 /* ShamirBackapp.app */;
@@ -197,6 +230,7 @@
 				7987D7DD243DE20100598DD4 /* Sources */,
 				7987D7DE243DE20100598DD4 /* Frameworks */,
 				7987D7DF243DE20100598DD4 /* Resources */,
+				794274572453046F002BEE35 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,6 +238,9 @@
 				7987D7E3243DE20100598DD4 /* PBXTargetDependency */,
 			);
 			name = ShamirBackappTests;
+			packageProductDependencies = (
+				794274542453046F002BEE35 /* ComposableArchitectureTestSupport */,
+			);
 			productName = ShamirBackappTests;
 			productReference = 7987D7E1243DE20100598DD4 /* ShamirBackappTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -236,6 +273,9 @@
 				Base,
 			);
 			mainGroup = 7987D7C2243DE1FB00598DD4;
+			packageReferences = (
+				7942744F2453046F002BEE35 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 7987D7CC243DE1FB00598DD4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -546,6 +586,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		7942744F2453046F002BEE35 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/swift-composable-architecture.git";
+			requirement = {
+				kind = revision;
+				revision = 6ced722687bf9d7c8f6607d673dda3852d281b24;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		7942744524508D3F002BEE35 /* ShamirKit */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -554,6 +605,16 @@
 		7942744824508D63002BEE35 /* ShamirKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ShamirKit;
+		};
+		794274502453046F002BEE35 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7942744F2453046F002BEE35 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		794274542453046F002BEE35 /* ComposableArchitectureTestSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7942744F2453046F002BEE35 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitectureTestSupport;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

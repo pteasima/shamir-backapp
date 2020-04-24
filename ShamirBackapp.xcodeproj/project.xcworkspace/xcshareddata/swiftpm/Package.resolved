@@ -18,6 +18,15 @@
           "revision": "5aaa2f190f420c07678f927247546c32a1c6f247",
           "version": "1.0.0"
         }
+      },
+      {
+        "package": "swift-composable-architecture",
+        "repositoryURL": "https://github.com/stephencelis/swift-composable-architecture.git",
+        "state": {
+          "branch": null,
+          "revision": "6ced722687bf9d7c8f6607d673dda3852d281b24",
+          "version": null
+        }
       }
     ]
   },
