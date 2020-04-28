@@ -21,8 +21,6 @@ struct AppView: View {
             Text("Assemble")
       }
     }
-    .onAppear { }
-    
   }
 }
 
