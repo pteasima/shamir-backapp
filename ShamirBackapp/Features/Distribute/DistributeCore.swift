@@ -2,7 +2,7 @@ import Foundation
 import ComposableArchitecture
 import ShamirKit
 
-struct DistributeState {
+struct DistributeState: Equatable {
   var isMaskEnabled: Bool = false
   var secretText: String = ""
   var pasteboardString: String?
