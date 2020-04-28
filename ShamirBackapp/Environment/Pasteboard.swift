@@ -1,13 +1,14 @@
 import Foundation
 import Combine
 import UIKit
+import ComposableArchitecture
 
 struct Pasteboard {
-  var string: () -> AnyPublisher<String?, Never> = {
+  var string: () -> Effect<String?> = {
     NotificationCenter.default.publisher(for: UIPasteboard.changedNotification)
       .map { _ in }
       .prepend(())
       .map { UIPasteboard.general.string }
-      .eraseToAnyPublisher()
+      .eraseToEffect()
   }
 }

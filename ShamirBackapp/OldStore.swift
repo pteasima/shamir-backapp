@@ -4,15 +4,12 @@ import UIKit
 import ShamirKit
 import SwiftUI
 
-// I eventually want to move this to pointfreeco's ComposableArchitecture when its released
-// I have some prototypes of the same architecture but no point investing into that now
-// So Im going for a simple redux that can be easily refactored later
-final class Store: ObservableObject {
+final class OldStore: ObservableObject {
   @Published var isMaskEnabled: Bool = false
   @Published var secretText: String = ""
   @Published var pasteboardString: String?
   @Published var threshold: Int = 2
-  @Published var generatedShares: Shares? = (shares: [Share(x: 1, y: 421337341289)], mersennePrimePower: 127)
+  @Published var generatedShares: Shares? = .init(shares: [Share(x: 1, y: 421337341289)], mersennePrimePower: 127)
   
   var displayedSecretText: String {
     get {
@@ -70,7 +67,7 @@ final class Store: ObservableObject {
     started = true
     
     cancellables += [
-      environment.pasteboard.string().assign(to: \.pasteboardString, on: self)
+//      environment.pasteboard.string().assign(to: \.pasteboardString, on: self)
     ]
   }
   

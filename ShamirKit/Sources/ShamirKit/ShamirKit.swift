@@ -7,7 +7,15 @@ public struct Share: Hashable {
   public let x: Int
   public let y: BigUInt
 }
-public typealias Shares = (shares: [Share], mersennePrimePower: Int)
+public struct Shares: Equatable {
+  public init(shares: [Share], mersennePrimePower: Int) {
+    self.shares = shares
+    self.mersennePrimePower = mersennePrimePower
+  }
+  
+  public var shares: [Share]
+  public var mersennePrimePower: Int
+}
 
 public func generateShares<G: RandomNumberGenerator>(secret: BigUInt, threshold k: Int, using rng: inout G) throws -> Shares {
   let mersennePrimePower = try Int.mersennePrimePower(greaterThan: max(secret, BigUInt(k)))
@@ -23,7 +31,7 @@ public func generateShares<G: RandomNumberGenerator>(secret: BigUInt, threshold 
     return accum
   }
   let points = (1...k).map { Share(x: $0, y: evaluate(polynomial: polynomial, at: $0)) }
-  return (shares: points, mersennePrimePower: mersennePrimePower)
+  return .init(shares: points, mersennePrimePower: mersennePrimePower)
 }
 
 public func recoverSecret(shares: [Share], mersennePrimePower: Int) -> BigUInt {
