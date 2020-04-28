@@ -34,24 +34,24 @@ typealias DistributeEnvironment = AppEnvironment
 let distributeReducer: Reducer<DistributeState, DistributeAction, DistributeEnvironment> = .strict { state, action in
   switch action {
   case .`init`:
-    guard !state.started else { return { _ in .none } }
+    guard !state.started else { return .none }
     state.started = true
     return { $0.pasteboard.string().map(DistributeAction.pasteboardStringChanged) }
   case .isMaskEnabledChanged(let isEnabled):
     state.isMaskEnabled = isEnabled
-    return { _ in .none }
+    return .none
   case .secretTextChanged(let s):
     state.secretText = s
-    return { _ in .none }
+    return .none
   case .pasteboardStringChanged(let s):
     state.pasteboardString = s
-    return { _ in .none }
+    return .none
   case .pasteFromClipboardTapped:
     state.secretText = state.pasteboardString ?? { assertionFailure(); return "" }()
-    return { _ in .none }
+    return .none
   case .thresholdChanged(let t):
     state.threshold = max(2, Int(round(t)))
-    return { _ in .none }
+    return .none
   case .generateButtonTapped:
     switch state.status {
     case .collectingInput:
@@ -61,6 +61,6 @@ let distributeReducer: Reducer<DistributeState, DistributeAction, DistributeEnvi
     case .showingResults:
         state.generatedShares = nil
     }
-    return { _ in .none }
+    return .none
   }
 }

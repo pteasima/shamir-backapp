@@ -15,6 +15,7 @@
 		794274562453046F002BEE35 /* ComposableArchitectureTestSupport in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 794274542453046F002BEE35 /* ComposableArchitectureTestSupport */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		7942745A2454D084002BEE35 /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794274592454D084002BEE35 /* AppCore.swift */; };
 		7942745C2455BF04002BEE35 /* DistributeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7942745B2455BF04002BEE35 /* DistributeCore.swift */; };
+		79427463245846EC002BEE35 /* StrictReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79427462245846EC002BEE35 /* StrictReducer.swift */; };
 		7987D7CF243DE1FB00598DD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7CE243DE1FB00598DD4 /* AppDelegate.swift */; };
 		7987D7D1243DE1FB00598DD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7D0243DE1FB00598DD4 /* SceneDelegate.swift */; };
 		7987D7D3243DE1FB00598DD4 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7D2243DE1FB00598DD4 /* AppView.swift */; };
@@ -62,10 +63,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7942744424508CE1002BEE35 /* ShamirKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ShamirKit; sourceTree = "<group>"; };
 		7942744B24509ADD002BEE35 /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		794274592454D084002BEE35 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
 		7942745B2455BF04002BEE35 /* DistributeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributeCore.swift; sourceTree = "<group>"; };
+		79427462245846EC002BEE35 /* StrictReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrictReducer.swift; sourceTree = "<group>"; };
+		794274642458492C002BEE35 /* ShamirKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ShamirKit; sourceTree = "<group>"; };
 		7987D7CB243DE1FB00598DD4 /* ShamirBackapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShamirBackapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7987D7CE243DE1FB00598DD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7987D7D0243DE1FB00598DD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,10 +128,18 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		79427461245846DE002BEE35 /* ComposableArchitectureExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				79427462245846EC002BEE35 /* StrictReducer.swift */,
+			);
+			path = ComposableArchitectureExtensions;
+			sourceTree = "<group>";
+		};
 		7987D7C2243DE1FB00598DD4 = {
 			isa = PBXGroup;
 			children = (
-				7942744424508CE1002BEE35 /* ShamirKit */,
+				794274642458492C002BEE35 /* ShamirKit */,
 				7987D7CD243DE1FB00598DD4 /* ShamirBackapp */,
 				7987D7E4243DE20100598DD4 /* ShamirBackappTests */,
 				7987D7CC243DE1FB00598DD4 /* Products */,
@@ -149,6 +159,7 @@
 		7987D7CD243DE1FB00598DD4 /* ShamirBackapp */ = {
 			isa = PBXGroup;
 			children = (
+				79427461245846DE002BEE35 /* ComposableArchitectureExtensions */,
 				7942744A24509ACD002BEE35 /* StyleGuide */,
 				79C9A507245064E300B14FDC /* Environment */,
 				79C9A503245054F600B14FDC /* Features */,
@@ -326,6 +337,7 @@
 				7942744C24509ADD002BEE35 /* StyleGuide.swift in Sources */,
 				7987D7D1243DE1FB00598DD4 /* SceneDelegate.swift in Sources */,
 				79C9A5062450550700B14FDC /* DistributeView.swift in Sources */,
+				79427463245846EC002BEE35 /* StrictReducer.swift in Sources */,
 				7987D7D3243DE1FB00598DD4 /* AppView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

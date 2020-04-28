@@ -21,9 +21,9 @@ let appReducer: Reducer<AppState, AppAction, AppEnvironment> = .combine(
     switch action {
     case .setSelectedTabIndex(let newIndex):
       state.selectedTabIndex = newIndex
-      return { _ in .none }
+      return .none
     case .distribute, .assemble:
-      return { _ in .none }
+      return .none
     }
   },
   distributeReducer.pullback(state: \AppState.distribute, action: /AppAction.distribute, environment: { $0 })
