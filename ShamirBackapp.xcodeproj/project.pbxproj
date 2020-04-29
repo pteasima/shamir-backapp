@@ -16,6 +16,7 @@
 		7942745A2454D084002BEE35 /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794274592454D084002BEE35 /* AppCore.swift */; };
 		7942745C2455BF04002BEE35 /* DistributeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7942745B2455BF04002BEE35 /* DistributeCore.swift */; };
 		79427463245846EC002BEE35 /* StrictReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79427462245846EC002BEE35 /* StrictReducer.swift */; };
+		7942746624584DFE002BEE35 /* TimeTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7942746524584DFE002BEE35 /* TimeTravel.swift */; };
 		7987D7CF243DE1FB00598DD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7CE243DE1FB00598DD4 /* AppDelegate.swift */; };
 		7987D7D1243DE1FB00598DD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7D0243DE1FB00598DD4 /* SceneDelegate.swift */; };
 		7987D7D3243DE1FB00598DD4 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7D2243DE1FB00598DD4 /* AppView.swift */; };
@@ -68,6 +69,7 @@
 		7942745B2455BF04002BEE35 /* DistributeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributeCore.swift; sourceTree = "<group>"; };
 		79427462245846EC002BEE35 /* StrictReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrictReducer.swift; sourceTree = "<group>"; };
 		794274642458492C002BEE35 /* ShamirKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ShamirKit; sourceTree = "<group>"; };
+		7942746524584DFE002BEE35 /* TimeTravel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravel.swift; sourceTree = "<group>"; };
 		7987D7CB243DE1FB00598DD4 /* ShamirBackapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShamirBackapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7987D7CE243DE1FB00598DD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7987D7D0243DE1FB00598DD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				79427462245846EC002BEE35 /* StrictReducer.swift */,
+				7942746524584DFE002BEE35 /* TimeTravel.swift */,
 			);
 			path = ComposableArchitectureExtensions;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				79C9A509245064FE00B14FDC /* Pasteboard.swift in Sources */,
 				7942744C24509ADD002BEE35 /* StyleGuide.swift in Sources */,
 				7987D7D1243DE1FB00598DD4 /* SceneDelegate.swift in Sources */,
+				7942746624584DFE002BEE35 /* TimeTravel.swift in Sources */,
 				79C9A5062450550700B14FDC /* DistributeView.swift in Sources */,
 				79427463245846EC002BEE35 /* StrictReducer.swift in Sources */,
 				7987D7D3243DE1FB00598DD4 /* AppView.swift in Sources */,

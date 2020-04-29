@@ -1,9 +1,9 @@
 import Foundation
 import ComposableArchitecture
 
-struct AppState {
+struct AppState: Equatable {
   var distribute: DistributeState = .init()
-  var assemble: () = ()
+//  var assemble: () = ()
   var selectedTabIndex: Int = 0
 }
 
