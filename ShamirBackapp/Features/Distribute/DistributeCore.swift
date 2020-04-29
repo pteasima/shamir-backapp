@@ -7,7 +7,7 @@ struct DistributeState: Equatable {
   var secretText: String = ""
   var pasteboardString: String?
   var threshold: Int = 2
-  var generatedShares: Shares? = Shares(shares: [Share(x: 1, y: 421337341289)], mersennePrimePower: 127)
+  var generatedShares: Shares?// = Shares(shares: [Share(x: 1, y: 421337341289)], mersennePrimePower: 127)
   var started: Bool = false
   
   enum Status {

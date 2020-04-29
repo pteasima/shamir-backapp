@@ -2,7 +2,7 @@ import Foundation
 import ComposableArchitecture
 import SwiftUI
 
-struct TimeTravelState<AppState: Equatable>: Equatable {
+struct TimeTravelState<AppState> {
   init(_ state: AppState) {
     self.stack = [state]
   }
@@ -51,6 +51,11 @@ extension Reducer {
   }
 }
 
+fileprivate struct TimeTravelDebuggerViewState: Equatable {
+  var isTimeTraveling: Bool
+  var currentIndex: Int
+  var maxIndex: Double
+}
 struct TimeTravelDebugger<AppState: Equatable, AppAction, AppView: View>: View {
   let store: Store<TimeTravelState<AppState>, TimeTravelAction<AppAction>>
   let appView: (Store<AppState, AppAction>) -> AppView
@@ -65,9 +70,9 @@ struct TimeTravelDebugger<AppState: Equatable, AppAction, AppView: View>: View {
   }
   
   var body: some View {
-    func content(with viewStore: ViewStore<TimeTravelState<AppState>, TimeTravelAction<AppAction>>) -> some View {
+    func content(with viewStore: ViewStore<TimeTravelDebuggerViewState, TimeTravelAction<AppAction>>) -> some View {
       func debuggerView() -> some View {
-        Slider(value: viewStore.binding(get: { Double($0.currentIndex) }, send: TimeTravelAction.setIndex), in: 0...Double(viewStore.stack.count - 1))
+        Slider(value: viewStore.binding(get: { Double($0.currentIndex) }, send: TimeTravelAction.setIndex), in: 0...viewStore.maxIndex)
       }
       return appView(store.scope(state: \.currentState, action: TimeTravelAction.app))
         .onTapGesture(count: 3) {
@@ -78,7 +83,16 @@ struct TimeTravelDebugger<AppState: Equatable, AppAction, AppView: View>: View {
         alignment: .top
       )
     }
-    return WithViewStore(store, content: content)
+    return WithViewStore(store.scope(state: \TimeTravelState.view), content: content)
+  }
+}
+
+extension TimeTravelState {
+  fileprivate var view: TimeTravelDebuggerViewState {
+    return .init(
+      isTimeTraveling: isTimeTraveling,
+      currentIndex: currentIndex,
+      maxIndex: Double(stack.endIndex - 1))
   }
 }
 
