@@ -13,7 +13,7 @@ struct TimeTravelState<AppState> {
     return stack[currentIndex]
   }
   mutating func append(_ state: AppState) {
-    precondition(!isTimeTraveling)
+    assert(!isTimeTraveling)
     stack.append(state)
     currentIndex += 1
   }
