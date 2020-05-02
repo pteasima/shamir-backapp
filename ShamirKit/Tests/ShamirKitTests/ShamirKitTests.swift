@@ -17,15 +17,9 @@ final class ShamirKitTests: XCTestCase {
     let secret = "🤷‍♂️"
     let secretInt = secret.utf8BigUIntRepresentation
     print(secretInt)
-    let (points, pPower) = try generateShares(secret: secretInt, threshold: 100, using: &rng)
-    print(pPower)
-    let recoveredSecretInt = recoverSecret(shares: points, mersennePrimePower: pPower)
-    print(recoveredSecretInt)
+    let shares = try generateShares(secret: secretInt, threshold: 100, using: &rng)
+    let recoveredSecretInt = recoverSecret(shares: shares.shares, mersennePrimePower: shares.bitWidth)
     let recoveredSecret = String(utf8BigUIntRepresentation: recoveredSecretInt)
-    print(recoveredSecret)
-    
-    
-//    let shares = shamir(secret: 500, using: &rng)
     XCTAssertEqual(secret, recoveredSecret)
   }
   

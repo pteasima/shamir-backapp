@@ -4,7 +4,7 @@ import UIKit
 import ComposableArchitecture
 
 struct Pasteboard {
-  var string: () -> Effect<String?> = {
+  var string: () -> Effect<String?, Never> = {
     NotificationCenter.default.publisher(for: UIPasteboard.changedNotification)
       .map { _ in }
       .prepend(())

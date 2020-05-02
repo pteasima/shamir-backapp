@@ -25,7 +25,8 @@ let appReducer: Reducer<AppState, AppAction, AppEnvironment> = .combine(
     case .distribute, .assemble:
       return .none
     }
-  },
-  distributeReducer.pullback(state: \AppState.distribute, action: /AppAction.distribute, environment: { $0 })
+  }
+//  ,
+//  distributeReducer.pullback(state: \AppState.distribute, action: /AppAction.distribute, environment: { $0 })
 )
 

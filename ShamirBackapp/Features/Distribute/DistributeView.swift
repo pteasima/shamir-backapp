@@ -14,9 +14,8 @@ struct DistributeView: View {
     var isGenerateDisabled: Bool
     var generateButtonText: String
     var generateButtonColor: Color
-    var generatedShares: Shares?
+    var generatedShares: SharesContainer?
   }
-  let makeViewState: (DistributeState) -> ViewState = \.view
   
   var body: some View {
     func content(with viewStore: ViewStore<ViewState, DistributeAction>) -> some View {
@@ -88,59 +87,51 @@ struct DistributeView: View {
           .padding([.top, .bottom])
         }
       }
-      
-            func generatedSharesSection(shares sharesContainer: Shares) -> some View {
-              func header() -> some View {
-                HStack {
-                  VStack(alignment: .leading) {
-                    HStack{
-                      Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
-                      Text("Generated \(sharesContainer.shares.count) shares.")
-                    }
-                    .font(.title)
-      
-                    Text("Modulus: 2") + Text(verbatim: "\(sharesContainer.mersennePrimePower)").font(Font.footnote).baselineOffset(6) + Text(" - 1")
-                  }
-                  Spacer()
-                  Group {
-                    Button(action: {}) {  Image(systemName: "doc.on.clipboard") }
-                    Text("/")
-                    Button(action: {}) {  Image(systemName: "square.and.arrow.up.on.square") }
-                  }
-                  .font(.button)
+      //thats a lot of stores and viewstores, might warrant its own View at some point
+      func generatedSharesSection(store: Store<SharesContainer, DistributeAction>) -> some View {
+        func content(with viewStore: ViewStore<SharesContainer, DistributeAction>) -> some View {
+          func header() -> some View {
+            HStack {
+              VStack(alignment: .leading) {
+                HStack{
+                  Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
+                  Text("Generated \(viewStore.state.shares.count) shares.")
                 }
+                .font(.title)
+                
+                Text("Modulus: 2") + Text(verbatim: "\(viewStore.bitWidth)").font(Font.footnote).baselineOffset(6) + Text(" - 1")
               }
-              return Section {
-                header()
-                ForEach(sharesContainer.shares, id: \.x) { share in
-                  HStack {
-                    Text(String(describing: share))
-                    Spacer()
-                    Group {
-                      Button(action: {}) {  Image(systemName: "doc.on.clipboard") }
-                      Text("/")
-                      Button(action: {}) {  Image(systemName: "square.and.arrow.up") }
-                    }
-                    .font(.smallButton)
-                  }
-                }
+              Spacer()
+              Group {
+                Button(action: {}) {  Image(systemName: "doc.on.clipboard") }
+                Text("/")
+                Button(action: {}) {  Image(systemName: "square.and.arrow.up.on.square") }
               }
+              .font(.button)
             }
-            return NavigationView {
-              Form {
-                inputSection()
-                viewStore.generatedShares.map(generatedSharesSection)
-              }
-              .buttonStyle(BorderlessButtonStyle())
-              .navigationBarTitle("Distribute a Secret")
-            }
-            .onAppear { viewStore.send(.`init`) }
-            .tabItem {
-                Text("Distribute")
-            }
-
+          }
+          return Section {
+            header()
+            ForEachStore(store.scope(state: { IdentifiedArray($0.fullShares, id: \.x) }, action: DistributeAction.shareRow), content: DistributeShareRowView.init(store:))
+          }
+        }
+        return WithViewStore(store, content: content)
+      }
+      return NavigationView {
+        Form {
+          inputSection()
+          IfLetStore(self.store.scope(state: \.generatedShares), then: generatedSharesSection)
+        }
+        .buttonStyle(BorderlessButtonStyle())
+        .navigationBarTitle("Distribute a Secret")
+      }
+      .onAppear { viewStore.send(.`init`) }
+      .tabItem {
+        Text("Distribute")
+      }
+      
     }
-    return WithViewStore(self.store.scope(state: makeViewState), content: content)
+    return WithViewStore(self.store.scope(state: \.view), content: content)
   }
 }
 

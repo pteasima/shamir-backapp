@@ -44,12 +44,13 @@ let powers = [
 extension Int {
   static func mersennePrimePower(greaterThan number: BigUInt) throws -> Int {
     let bitWidth = number.bitWidth
+    //TODO: usually >= bitWidth is enough, unless self is the mersenne prime itself (which we can tell by checking that its all ones)
     return try powers.first { $0 > bitWidth } ?? { throw ShamirError.secretTooLarge }()
   }
 }
 
 extension BigUInt {
   static func mersenePrime(withPower power: Int) -> BigUInt {
-    BigUInt(2).power(power) - 1
+    BigUInt(2).power(power) - 1 //TODO: this just means power ones with leading zeros (if power is 3, this will be 00000111), we can do that efficiently with a buffer
   }
 }

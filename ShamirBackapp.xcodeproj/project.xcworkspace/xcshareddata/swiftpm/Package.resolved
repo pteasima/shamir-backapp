@@ -24,8 +24,17 @@
         "repositoryURL": "https://github.com/stephencelis/swift-composable-architecture.git",
         "state": {
           "branch": "master",
-          "revision": "8369f82129fad020ef8ed7ce74968631995fcec4",
+          "revision": "491f88919c4cb852bbbe31f709d309a7748fd217",
           "version": null
+        }
+      },
+      {
+        "package": "Tagged",
+        "repositoryURL": "https://github.com/pointfreeco/swift-tagged.git",
+        "state": {
+          "branch": null,
+          "revision": "592e1eb4255c571ebffc29955011e352217501b4",
+          "version": "0.5.0"
         }
       }
     ]

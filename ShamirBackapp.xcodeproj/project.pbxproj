@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		790892FC245AE81700F44116 /* DistributeShareRowCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790892FB245AE81700F44116 /* DistributeShareRowCore.swift */; };
+		790892FE245AE82100F44116 /* DistributeShareRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790892FD245AE82100F44116 /* DistributeShareRowView.swift */; };
 		7942744924508D63002BEE35 /* ShamirKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7942744824508D63002BEE35 /* ShamirKit */; };
 		7942744C24509ADD002BEE35 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7942744B24509ADD002BEE35 /* StyleGuide.swift */; };
 		794274512453046F002BEE35 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 794274502453046F002BEE35 /* ComposableArchitecture */; };
@@ -24,6 +26,7 @@
 		7987D7D8243DE20000598DD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7987D7D7243DE20000598DD4 /* Preview Assets.xcassets */; };
 		7987D7DB243DE20000598DD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7987D7D9243DE20000598DD4 /* LaunchScreen.storyboard */; };
 		7987D7E6243DE20100598DD4 /* ShamirBackappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987D7E5243DE20100598DD4 /* ShamirBackappTests.swift */; };
+		79B9A3DF245B087D006E0BB1 /* Tagged in Frameworks */ = {isa = PBXBuildFile; productRef = 79B9A3DE245B087D006E0BB1 /* Tagged */; };
 		79C9A5062450550700B14FDC /* DistributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C9A5052450550700B14FDC /* DistributeView.swift */; };
 		79C9A509245064FE00B14FDC /* Pasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C9A508245064FE00B14FDC /* Pasteboard.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +67,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		790892FB245AE81700F44116 /* DistributeShareRowCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributeShareRowCore.swift; sourceTree = "<group>"; };
+		790892FD245AE82100F44116 /* DistributeShareRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributeShareRowView.swift; sourceTree = "<group>"; };
 		7942744B24509ADD002BEE35 /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		794274592454D084002BEE35 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
 		7942745B2455BF04002BEE35 /* DistributeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributeCore.swift; sourceTree = "<group>"; };
@@ -90,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79B9A3DF245B087D006E0BB1 /* Tagged in Frameworks */,
 				794274512453046F002BEE35 /* ComposableArchitecture in Frameworks */,
 				7942744924508D63002BEE35 /* ShamirKit in Frameworks */,
 			);
@@ -106,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		790892FA245AE7EB00F44116 /* DistributeShareRow */ = {
+			isa = PBXGroup;
+			children = (
+				790892FB245AE81700F44116 /* DistributeShareRowCore.swift */,
+				790892FD245AE82100F44116 /* DistributeShareRowView.swift */,
+			);
+			path = DistributeShareRow;
+			sourceTree = "<group>";
+		};
 		7942744724508D63002BEE35 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +220,7 @@
 		79C9A504245054FB00B14FDC /* Distribute */ = {
 			isa = PBXGroup;
 			children = (
+				790892FA245AE7EB00F44116 /* DistributeShareRow */,
 				79C9A5052450550700B14FDC /* DistributeView.swift */,
 				7942745B2455BF04002BEE35 /* DistributeCore.swift */,
 			);
@@ -240,6 +256,7 @@
 			packageProductDependencies = (
 				7942744824508D63002BEE35 /* ShamirKit */,
 				794274502453046F002BEE35 /* ComposableArchitecture */,
+				79B9A3DE245B087D006E0BB1 /* Tagged */,
 			);
 			productName = ShamirBackapp;
 			productReference = 7987D7CB243DE1FB00598DD4 /* ShamirBackapp.app */;
@@ -297,6 +314,7 @@
 			mainGroup = 7987D7C2243DE1FB00598DD4;
 			packageReferences = (
 				7942744F2453046F002BEE35 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				79B9A3DD245B087D006E0BB1 /* XCRemoteSwiftPackageReference "swift-tagged" */,
 			);
 			productRefGroup = 7987D7CC243DE1FB00598DD4 /* Products */;
 			projectDirPath = "";
@@ -333,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				790892FE245AE82100F44116 /* DistributeShareRowView.swift in Sources */,
 				7942745A2454D084002BEE35 /* AppCore.swift in Sources */,
 				7942745C2455BF04002BEE35 /* DistributeCore.swift in Sources */,
 				7987D7CF243DE1FB00598DD4 /* AppDelegate.swift in Sources */,
@@ -340,6 +359,7 @@
 				7942744C24509ADD002BEE35 /* StyleGuide.swift in Sources */,
 				7987D7D1243DE1FB00598DD4 /* SceneDelegate.swift in Sources */,
 				7942746624584DFE002BEE35 /* TimeTravel.swift in Sources */,
+				790892FC245AE81700F44116 /* DistributeShareRowCore.swift in Sources */,
 				79C9A5062450550700B14FDC /* DistributeView.swift in Sources */,
 				79427463245846EC002BEE35 /* StrictReducer.swift in Sources */,
 				7987D7D3243DE1FB00598DD4 /* AppView.swift in Sources */,
@@ -619,6 +639,14 @@
 				kind = branch;
 			};
 		};
+		79B9A3DD245B087D006E0BB1 /* XCRemoteSwiftPackageReference "swift-tagged" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-tagged.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -639,6 +667,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7942744F2453046F002BEE35 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitectureTestSupport;
+		};
+		79B9A3DE245B087D006E0BB1 /* Tagged */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79B9A3DD245B087D006E0BB1 /* XCRemoteSwiftPackageReference "swift-tagged" */;
+			productName = Tagged;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
