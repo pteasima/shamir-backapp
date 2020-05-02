@@ -16,7 +16,7 @@ struct AppEnvironment {
   var pasteboard: Pasteboard = .init()
 }
 
-let appReducer: Reducer<AppState, AppAction, AppEnvironment> = .combine(
+let appReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer.combine(
   .strict { state, action in
     switch action {
     case .setSelectedTabIndex(let newIndex):
@@ -25,8 +25,7 @@ let appReducer: Reducer<AppState, AppAction, AppEnvironment> = .combine(
     case .distribute, .assemble:
       return .none
     }
-  }
-//  ,
-//  distributeReducer.pullback(state: \AppState.distribute, action: /AppAction.distribute, environment: { $0 })
-)
+  },
+  distributeReducer.pullback(state: \AppState.distribute, action: /AppAction.distribute, environment: { $0 })
+).debug()
 
