@@ -31,9 +31,15 @@ struct DistributeView: View {
               }
               .disabled(viewStore.isPasteDisabled)
             }
+            if viewStore.isMaskEnabled {
+            SecureField("Secret", text: viewStore.binding(get: \.secretText, send: DistributeAction.secretTextChanged))
+              .disableAutocorrection(true)
+              .textFieldStyle(RoundedBorderTextFieldStyle())
+            } else {
             TextField("Secret", text: viewStore.binding(get: \.secretText, send: DistributeAction.secretTextChanged))
               .disableAutocorrection(true)
               .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
             HStack {
               Spacer()
               Toggle(isOn: viewStore.binding(get: \.isMaskEnabled, send: DistributeAction.isMaskEnabledChanged)) {
@@ -140,7 +146,7 @@ extension DistributeState {
     let isGenerateDisabled = status == .collectingInput && secretText.isEmpty
     return .init(
       isMaskEnabled: isMaskEnabled,
-      secretText: isMaskEnabled ? String(repeating: "*", count: secretText.count) : secretText,
+      secretText: secretText
       isPasteDisabled: pasteboardString?.isEmpty ?? true,
       threshold: threshold,
       isInputSectionDisabled: status != .collectingInput,
